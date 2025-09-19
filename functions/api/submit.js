@@ -30,7 +30,7 @@ export async function onRequestPost({ request, env }) {
 	  const objectKey = `submissions/${new Date().toISOString().replace(/[:.]/g, '-')}.json`;
   
 	  // Upload to R2
-	  const putResult = await env.demodata.put(objectKey, pretty, {
+	  const putResult = await env.demo.put(objectKey, pretty, {
 		httpMetadata: { contentType: 'application/json; charset=utf-8' },
 	  });
   
